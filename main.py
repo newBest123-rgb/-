@@ -1,5 +1,6 @@
 from flask import Flask
 
+
 app = Flask(__name__)
 
 
@@ -17,6 +18,18 @@ def slogan():
 def promotion():
     with open('design.html', 'r', encoding='utf-8') as des:
         return des.read()
+
+
+@app.route('/image_mars')
+def image_mars():
+    with open('image.html', 'r', encoding='utf-8') as image:
+        return image.read()
+
+
+@app.route('/promotion_image')
+def promotion_image():
+    with open('image_1.html', 'r', encoding='utf-8') as image_1:
+        return image_1.read()
 
 
 if __name__ == '__main__':
